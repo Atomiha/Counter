@@ -9,16 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var counterLabel: UILabel!
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var logTextView: UITextView!
+    @IBOutlet private weak var counterLabel: UILabel!
+    @IBOutlet private weak var plusButton: UIButton!
+    @IBOutlet private weak var minusButton: UIButton!
+    @IBOutlet private weak var resetButton: UIButton!
+    @IBOutlet private weak var logTextView: UITextView!
     
-    var counter = 0
+    private var counter = 0
     
-
-    //print(dateFormatter.string(from: getDate))
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,14 +24,14 @@ class ViewController: UIViewController {
         logTextView.isEditable = false
     }
 
-    @IBAction func plusButtonDidTap(_ sender: Any) {
+    @IBAction private func plusButtonDidTap(_ sender: Any) {
         counter += 1
         counterLabel.text = "\(counter)"
         
         logTextView.text += "\n\(getCurrentDate()): значение изменено на +1"
     }
     
-    @IBAction func minusButtonDidTap(_ sender: Any) {
+    @IBAction private func minusButtonDidTap(_ sender: Any) {
         if counter > 0 {
             counter -= 1
             counterLabel.text = "\(counter)"
@@ -44,14 +42,14 @@ class ViewController: UIViewController {
             logTextView.text += "\n\(getCurrentDate()): попытка уменьшить значение счётчика ниже 0"
         }
     }
-    @IBAction func resetButtonDidTap(_ sender: Any) {
+    @IBAction private func resetButtonDidTap(_ sender: Any) {
         counter = 0
         counterLabel.text = "0"
         
         logTextView.text += "\n\(getCurrentDate()): значение сброшено"
     }
     
-    func getCurrentDate() -> String {
+    private func getCurrentDate() -> String {
         let getCurrentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yy HH:mm:ss"
