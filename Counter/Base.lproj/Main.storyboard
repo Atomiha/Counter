@@ -16,16 +16,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Значение счётчика: 42" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rm5-4j-4dO">
-                                <rect key="frame" x="20" y="211" width="357" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Значение счётчика: 42" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rm5-4j-4dO">
+                                <rect key="frame" x="20" y="211" width="357" height="38.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KS-g1-M3a">
-                                <rect key="frame" x="250" y="400" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bL3-Z9-oxc">
+                                <rect key="frame" x="100" y="509.33333333333326" width="193" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Обнулить"/>
+                                <connections>
+                                    <action selector="resetButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Lh-Uf-BRK"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="История изменений:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BoG-QO-vxR">
+                                <rect key="frame" x="20" y="604.33333333333337" width="353" height="205.66666666666663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1l-T1-RMn">
+                                <rect key="frame" x="100" y="399.33333333333331" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="nDa-kz-PFJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="vSI-Rk-vEa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="-"/>
+                                <connections>
+                                    <action selector="minusButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IYX-Jv-IfV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KS-g1-M3a">
+                                <rect key="frame" x="243" y="399.33333333333331" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Bb7-fh-goi"/>
+                                    <constraint firstAttribute="width" constant="50" id="jeK-F5-0bc"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+">
                                     <color key="baseBackgroundColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,35 +63,26 @@
                                     <action selector="plusButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUY-5E-CLQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bL3-Z9-oxc">
-                                <rect key="frame" x="110" y="525" width="190" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Обнулить"/>
-                                <connections>
-                                    <action selector="resetButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Lh-Uf-BRK"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="История изменений:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BoG-QO-vxR">
-                                <rect key="frame" x="20" y="600" width="360" height="210"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1l-T1-RMn">
-                                <rect key="frame" x="110" y="400" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="-"/>
-                                <connections>
-                                    <action selector="minusButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IYX-Jv-IfV"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rm5-4j-4dO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3RZ-AJ-J8t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bL3-Z9-oxc" secondAttribute="trailing" constant="100" id="4Ku-h7-OwY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9KS-g1-M3a" secondAttribute="trailing" constant="100" id="8Wt-hJ-83N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BoG-QO-vxR" secondAttribute="trailing" constant="20" id="991-xA-VH4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rm5-4j-4dO" secondAttribute="trailing" constant="16" id="Ea6-Ga-YTv"/>
+                            <constraint firstItem="Rm5-4j-4dO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="152" id="J8r-fF-Kvk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BoG-QO-vxR" secondAttribute="bottom" constant="8" id="Mib-70-yLS"/>
+                            <constraint firstItem="B1l-T1-RMn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Z9L-5E-jPx"/>
+                            <constraint firstItem="9KS-g1-M3a" firstAttribute="top" secondItem="Rm5-4j-4dO" secondAttribute="bottom" constant="150" id="aQ6-0G-Y7J"/>
+                            <constraint firstItem="bL3-Z9-oxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="gDK-W4-MQH"/>
+                            <constraint firstItem="B1l-T1-RMn" firstAttribute="top" secondItem="Rm5-4j-4dO" secondAttribute="bottom" constant="150" id="kBL-ja-jRI"/>
+                            <constraint firstItem="bL3-Z9-oxc" firstAttribute="top" secondItem="B1l-T1-RMn" secondAttribute="bottom" constant="60" id="kVD-fQ-Ogj"/>
+                            <constraint firstItem="BoG-QO-vxR" firstAttribute="top" secondItem="bL3-Z9-oxc" secondAttribute="bottom" constant="60" id="kkH-dF-1LA"/>
+                            <constraint firstItem="bL3-Z9-oxc" firstAttribute="top" secondItem="9KS-g1-M3a" secondAttribute="bottom" constant="60" id="oUU-8h-14Y"/>
+                            <constraint firstItem="BoG-QO-vxR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="utv-2O-z5o"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="counterLabel" destination="Rm5-4j-4dO" id="dDG-gD-PJY"/>
